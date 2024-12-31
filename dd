@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inject Button Example</title>
+    </head>
+    <body>
+        <div id="settings-render">
+            <div>
+                <form>
+                    <div class="form--elements-wrapper">
+                        <div>
+                            <p>First paragraph</p>
+                        </div>
+                        <div>
+                            <p>Second paragraph</p>
+                        </div>
+                        <div>
+                            <p>Paragraph where the button will be added</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // JavaScript to inject a button into a specific paragraph
+            document.addEventListener("DOMContentLoaded", () => {
+                // Select the target paragraph using the provided selector
+                const targetParagraph = document.querySelector(
+                    "#settings-render > div > form > div.form--elements-wrapper > div:nth-child(3) > p"
+                );
+
+                // Check if the paragraph exists
+                if (targetParagraph) {
+                    // Create a new button element
+                    const button = document.createElement("button");
+                    button.textContent = "Click Me"; // Set button text
+                    button.style.marginLeft = "10px"; // Add some spacing
+
+                    // Set the button to act as a link
+                    button.onclick = () => {
+                        window.location.href = "https://example.com"; // Replace with your desired URL
+                    };
+
+                    // Append the button to the paragraph
+                    targetParagraph.appendChild(button);
+                } else {
+                    console.error("Target paragraph not found!");
+                }
+            });
+        </script>
+    </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Inject Button Example</title>
+    </head>
+
+    <body>
+        <div id="settings-render">
+            <div>
+                <form>
+                    <div class="form--elements-wrapper">
+                        <div>
+                            <p>First paragraph</p>
+                        </div>
+                        <div>
+                            <p>Second paragraph</p>
+                        </div>
+                        <div>
+                            <p>Paragraph where the button will be added</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+
+<style>
+    #settings-render>div>form>div.form--elements-wrapper>div:nth-child(3) {
+        display: flex;
+        background-color: green;
+    }
+</style>
+
+
+
